@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "harmonia"
+version = "0.1.0"
+description = "Discord bot for Blahaj"
+authors = ["Your Name <you@example.com>"]
+license = "MPL-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<4.0"
+discord-py = {extras = ["voice"], version = "^2.2.2"}
+aiodns = "^3.0.0"
+brotli = "^1.0.9"
+faust-cchardet = "^2.1.18"
+python-dotenv = "^1.0.0"
+webcolors = "^1.12"
+anyio = "^3.6.2"
+orjson = "^3.8.8"
+
+
+[tool.poetry.group.dev.dependencies]
+pyright = "^1.1.300"
+pre-commit = "^3.2.1"
+
+
+[tool.poetry.group.tests.dependencies]
+pytest = "^7.2.2"
+pytest-asyncio = "^0.21.0"
+nox = "^2022.11.21"
+nox-poetry = "^1.0.2"
+
+[tool.bandit]
+skips = ["B311"]
+
+[tool.isort]
+profile = 'black'
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
